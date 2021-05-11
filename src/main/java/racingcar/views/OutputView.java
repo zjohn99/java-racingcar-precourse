@@ -1,6 +1,5 @@
 package racingcar.views;
 
-import static racingcar.views.GameMessages.printEmptyNextLine;
 import java.util.Collections;
 import racingcar.elements.Car;
 import racingcar.elements.Match;
@@ -20,7 +19,7 @@ public class OutputView {
             printCarStatus(car);
         }
 
-        printEmptyNextLine();
+        GameMessages.printEmptyNextLine();
     }
 
     public static void printMatchWinner(Match match) {
