@@ -1,13 +1,9 @@
 package racingcar.views;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-
-import static racingcar.views.GameMessages.printAskInputCarListMessage;
-import static racingcar.views.GameMessages.printAskTurnNumberInputMessage;
 import static utils.InputUtils.inputInteger;
 import static utils.InputUtils.inputStringArray;
+
+import java.util.Scanner;
 
 public class InputView {
 
@@ -17,7 +13,7 @@ public class InputView {
     public static String[] inputCarList(Scanner sc) {
         String[] carList;
 
-        printAskInputCarListMessage();
+        GameMessages.printAskInputCarListMessage();
 
         try {
             carList = inputStringArray(sc);
@@ -31,7 +27,7 @@ public class InputView {
     public static Integer inputTurn(Scanner sc) {
         Integer turn;
 
-        printAskTurnNumberInputMessage();
+        GameMessages.printAskTurnNumberInputMessage();
 
         try {
             turn = inputInteger(sc);
