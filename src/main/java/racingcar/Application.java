@@ -9,18 +9,17 @@ import racingcar.views.OutputView;
 public class Application {
 
     private static Integer stopRunGameCondition = 0;
-    private static Integer minusValuePerTurn = 1;
 
     private static void runGame(Scanner sc) {
         String[] carNameArray = InputView.inputCarList(sc);
-        Integer turnCount = InputView.inputTurn(sc);
         Match match = Match.createMatchByCarNameArray(carNameArray);
+        Integer turnCount = InputView.inputTurn(sc);
 
         GameMessages.printExecutionResultUIMessage();
         GameMessages.printEmptyNextLine();
 
         while (turnCount != stopRunGameCondition) {
-            turnCount -= minusValuePerTurn;
+            turnCount--;
             match.runOneTurn();
             OutputView.printCurrentMatchStatus(match);
         }
