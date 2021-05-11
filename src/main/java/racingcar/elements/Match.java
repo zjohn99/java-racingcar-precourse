@@ -13,8 +13,18 @@ public class Match {
     private Match() {
     }
 
-    public Match(List<Car> carList) {
+    private Match(List<Car> carList) {
         this.carList = carList;
+    }
+
+    public static Match createMatchByCarNameArray(String[] carNames) {
+        List<Car> carList = new ArrayList<>();
+
+        for (String carName : carNames) {
+            carList.add(new Car(carName));
+        }
+
+        return new Match(carList);
     }
 
     private Integer getLongestDistance() {
@@ -29,6 +39,15 @@ public class Match {
         this.longestDistance = Math.max(car.getPosition(), this.longestDistance);
     }
 
+    public void runOneTurn() {
+        for (Car car : carList) {
+            if (carMoveVerifier()) {
+                car.moveCar();
+                this.updateLongestDistance(car);
+            }
+        }
+    }
+
     public List<String> makeWinnerResult() {
         List<String> result = new ArrayList<>();
 
@@ -39,14 +58,5 @@ public class Match {
         }
 
         return result;
-    }
-
-    public void runOneMatch() {
-        for (Car car : carList) {
-            if (carMoveVerifier()) {
-                car.moveCar();
-                this.updateLongestDistance(car);
-            }
-        }
     }
 }
