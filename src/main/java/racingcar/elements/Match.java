@@ -1,5 +1,6 @@
 package racingcar.elements;
 
+import static racingcar.elements.Car.createCarListByStringArray;
 import static racingcar.tools.GameRandomTool.carMoveVerifier;
 
 import java.util.ArrayList;
@@ -7,7 +8,7 @@ import java.util.List;
 
 public class Match {
 
-    private Integer longestDistance = 0;
+    private Integer longestDistanceInMatch = 0;
     private List<Car> carList;
 
     private Match() {
@@ -18,17 +19,11 @@ public class Match {
     }
 
     public static Match createMatchByCarNameArray(String[] carNames) {
-        List<Car> carList = new ArrayList<>();
-
-        for (String carName : carNames) {
-            carList.add(new Car(carName));
-        }
-
-        return new Match(carList);
+        return new Match(createCarListByStringArray(carNames));
     }
 
-    private Integer getLongestDistance() {
-        return this.longestDistance;
+    private Integer getLongestDistanceInMatch() {
+        return this.longestDistanceInMatch;
     }
 
     public List<Car> getCarList() {
@@ -36,7 +31,7 @@ public class Match {
     }
 
     private void updateLongestDistance(Car car) {
-        this.longestDistance = Math.max(car.getPosition(), this.longestDistance);
+        this.longestDistanceInMatch = Math.max(car.getPosition(), this.getLongestDistanceInMatch());
     }
 
     public void runOneTurn() {
@@ -52,7 +47,7 @@ public class Match {
         List<String> result = new ArrayList<>();
 
         for (Car car : this.getCarList()) {
-            if (car.getPosition() == this.getLongestDistance()) {
+            if (car.getPosition() == this.getLongestDistanceInMatch()) {
                 result.add(car.getName());
             }
         }
