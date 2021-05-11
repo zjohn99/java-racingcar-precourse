@@ -1,6 +1,7 @@
 package racingcar.elements;
 
 public class Car {
+
     private final String name;
     private int position = 0;
 
