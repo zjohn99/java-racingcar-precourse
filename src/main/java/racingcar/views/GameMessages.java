@@ -16,4 +16,6 @@ public class GameMessages {
     public static void printExecutionResultUIMessage() {
         System.out.println("실행 결과");
     }
+
+    public static void printEmptyNextLine() { System.out.println(); }
 }
