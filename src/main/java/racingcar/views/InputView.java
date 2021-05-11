@@ -1,5 +1,7 @@
 package racingcar.views;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 import static racingcar.views.GameMessages.printAskInputCarListMessage;
