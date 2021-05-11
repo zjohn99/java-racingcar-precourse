@@ -2,6 +2,8 @@ package racingcar.elements;
 
 public class Car {
 
+    private static final int moveDistancePerOrder = 1;
+
     private final String name;
     private int position = 0;
 
@@ -10,7 +12,7 @@ public class Car {
     }
 
     public void moveCar() {
-        this.position += 1;
+        this.position += moveDistancePerOrder;
     }
 
     public String getName() {
