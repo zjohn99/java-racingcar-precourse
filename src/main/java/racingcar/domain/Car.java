@@ -35,6 +35,14 @@ public class Car {
     }
 
     private void validateNameLength(String name) {
+        if (name == null) {
+            throw new IllegalArgumentException("[ERROR]: 이름이 null 인 경우는 허용하지 않습니다.");
+        }
+
+        if (name.length() == 0) {
+            throw new IllegalArgumentException("[ERROR]: 길이가 0인 이름은 허용하지 않습니다.");
+        }
+
         if (name.length() > carNameMaximumLength) {
             throw new IllegalArgumentException("[ERROR]: 각 차량의 길이가 5를 초과하면 허용하지 않습니다.");
         }
