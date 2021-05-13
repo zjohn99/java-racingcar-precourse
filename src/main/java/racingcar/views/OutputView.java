@@ -2,7 +2,7 @@ package racingcar.views;
 
 import java.util.Collections;
 import racingcar.domain.Car;
-import racingcar.domain.Match;
+import racingcar.domain.GameTurn;
 
 public class OutputView {
 
@@ -14,15 +14,15 @@ public class OutputView {
             .nCopies(car.getPosition(), "-")));
     }
 
-    public static void printCurrentMatchStatus(Match match) {
-        for (Car car : match.getCarList()) {
+    public static void printCurrentGameTurnStatus(GameTurn gameTurn) {
+        for (Car car : gameTurn.getCarList()) {
             printCarStatus(car);
         }
 
         GameMessages.printEmptyNextLine();
     }
 
-    public static void printMatchWinner(Match match) {
-        System.out.println("최종 우승자: " + String.join(", ", match.makeWinnerResult()));
+    public static void printMatchWinner(GameTurn gameTurn) {
+        System.out.println("최종 우승자: " + String.join(", ", gameTurn.makeWinnerResult()));
     }
 }

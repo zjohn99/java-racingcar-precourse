@@ -6,20 +6,20 @@ import static racingcar.tools.GameRandomTool.carMoveVerifier;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Match {
+public class GameTurn {
 
     private Integer longestDistanceInMatch = 0;
     private List<Car> carList;
 
-    private Match() {
+    private GameTurn() {
     }
 
-    private Match(List<Car> carList) {
+    private GameTurn(List<Car> carList) {
         this.carList = carList;
     }
 
-    public static Match createMatchByCarNameArray(String[] carNames) {
-        return new Match(createCarListByStringArray(carNames));
+    public static GameTurn createMatchByCarNameArray(String[] carNames) {
+        return new GameTurn(createCarListByStringArray(carNames));
     }
 
     private Integer getLongestDistanceInMatch() {
