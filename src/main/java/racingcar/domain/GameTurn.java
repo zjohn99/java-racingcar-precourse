@@ -9,7 +9,7 @@ public class GameTurn {
 
     private static int minimumRequirementNumberForCarMove = 4;
 
-    private Integer longestDistanceInMatch = 0;
+    private int longestDistanceInMatch = 0;
     private List<Car> carList;
 
     private GameTurn() {
@@ -40,7 +40,7 @@ public class GameTurn {
         return this.carList;
     }
 
-    private Integer getLongestDistanceInMatch() {
+    private int getLongestDistanceInMatch() {
         return this.longestDistanceInMatch;
     }
 
@@ -51,7 +51,7 @@ public class GameTurn {
     public void updateLongestDistance() {
         for (Car car : carList) {
             this.longestDistanceInMatch = Math
-                .max(car.getPosition(), this.getLongestDistanceInMatch());
+                .max(car.getPosition(), getLongestDistanceInMatch());
         }
     }
 
