@@ -11,7 +11,7 @@ public class Application {
     private static void runGame(Scanner sc) {
         String[] carNameArray = InputView.inputCarList(sc);
         Match match = Match.createMatchByCarNameArray(carNameArray);
-        Integer turnCount = InputView.inputTurn(sc);
+        int turnCount = InputView.inputTurn(sc);
 
         GameMessages.printExecutionResultUIMessage();
         GameMessages.printEmptyNextLine();
