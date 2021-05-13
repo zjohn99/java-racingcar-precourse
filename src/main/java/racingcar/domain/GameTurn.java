@@ -16,6 +16,7 @@ public class GameTurn {
     }
 
     private GameTurn(List<Car> carList) {
+        validateCarNamesArray(carList);
         this.carList = carList;
     }
 
@@ -29,16 +30,22 @@ public class GameTurn {
         return new GameTurn(carList);
     }
 
+    private void validateCarNamesArray(List<Car> carList) {
+        if (carList.size() == 0) {
+            throw new IllegalArgumentException("[ERROR]: 비어있는 경주 자동차 목록은 허용하지 않습니다.");
+        }
+    }
+
+    public List<Car> getCarList() {
+        return this.carList;
+    }
+
     private Integer getLongestDistanceInMatch() {
         return this.longestDistanceInMatch;
     }
 
     private boolean isCarMoveAble(int number) {
         return number >= minimumRequirementNumberForCarMove;
-    }
-
-    public List<Car> getCarList() {
-        return this.carList;
     }
 
     public void updateLongestDistance() {
