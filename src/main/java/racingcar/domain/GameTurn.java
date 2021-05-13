@@ -37,7 +37,7 @@ public class GameTurn {
         }
     }
 
-    public List<Car> getCarList() {
+    private List<Car> getCarList() {
         return Collections.unmodifiableList(this.carList);
     }
 
