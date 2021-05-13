@@ -8,8 +8,6 @@ import racingcar.views.OutputView;
 
 public class Application {
 
-    private static Integer stopRunGameCondition = 0;
-
     private static void runGame(Scanner sc) {
         String[] carNameArray = InputView.inputCarList(sc);
         Match match = Match.createMatchByCarNameArray(carNameArray);
@@ -18,7 +16,7 @@ public class Application {
         GameMessages.printExecutionResultUIMessage();
         GameMessages.printEmptyNextLine();
 
-        while (turnCount != stopRunGameCondition) {
+        while (turnCount != 0) {
             turnCount--;
             match.runOneTurn();
             OutputView.printCurrentMatchStatus(match);
