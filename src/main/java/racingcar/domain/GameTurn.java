@@ -35,15 +35,16 @@ public class GameTurn {
         return this.carList;
     }
 
-    private void updateLongestDistance(Car car) {
-        this.longestDistanceInMatch = Math.max(car.getPosition(), this.getLongestDistanceInMatch());
+    public void updateLongestDistance() {
+        for (Car car : carList) {
+            this.longestDistanceInMatch = Math.max(car.getPosition(), this.getLongestDistanceInMatch());
+        }
     }
 
     public void runOneTurn() {
         for (Car car : carList) {
             if (GameRandomTool.carMoveVerifier()) {
                 car.moveCar();
-                this.updateLongestDistance(car);
             }
         }
     }

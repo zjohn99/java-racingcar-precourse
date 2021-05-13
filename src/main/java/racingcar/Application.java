@@ -18,6 +18,7 @@ public class Application {
         while (turnCount != 0) {
             turnCount--;
             gameTurn.runOneTurn();
+            gameTurn.updateLongestDistance();
             OutputView.printCurrentGameTurnStatus(gameTurn);
         }
 
