@@ -1,7 +1,7 @@
 package racingcar;
 
 import java.util.Scanner;
-import racingcar.domain.GameTurn;
+import racingcar.domain.Game;
 import racingcar.views.InputView;
 import racingcar.views.OutputView;
 
@@ -9,7 +9,7 @@ public class Application {
 
     private static void runGame(Scanner sc) {
         String[] carNameArray = InputView.inputCarList(sc);
-        GameTurn gameTurn = GameTurn.createMatchByCarNameArray(carNameArray);
+        Game game = Game.createMatchByCarNameArray(carNameArray);
         int turnCount = InputView.inputTurn(sc);
 
         OutputView.printExecutionResultUIMessage();
@@ -17,12 +17,12 @@ public class Application {
 
         while (turnCount != 0) {
             turnCount--;
-            gameTurn.runOneTurn();
-            gameTurn.updateLongestDistance();
-            OutputView.printCurrentGameTurnStatus(gameTurn);
+            game.runOneTurn();
+            game.updateLongestDistance();
+            OutputView.printCurrentGameTurnStatus(game);
         }
 
-        OutputView.printMatchWinner(gameTurn);
+        OutputView.printMatchWinner(game);
     }
 
     public static void main(String[] args) {

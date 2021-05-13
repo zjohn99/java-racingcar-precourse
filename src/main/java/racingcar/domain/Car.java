@@ -13,6 +13,13 @@ public class Car {
         this.name = name;
     }
 
+    public Car clone() {
+        Car car = new Car(getName());
+        car.position = getPosition();
+
+        return car;
+    }
+
     public String getName() {
         return this.name;
     }

@@ -6,29 +6,29 @@ import racingcar.tools.GameRandomTool;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GameTurn {
+public class Game {
 
     private static int minimumRequirementNumberForCarMove = 4;
 
     private int longestDistanceInMatch = 0;
     private List<Car> carList;
 
-    private GameTurn() {
+    private Game() {
     }
 
-    private GameTurn(List<Car> carList) {
+    private Game(List<Car> carList) {
         validateCarNamesArray(carList);
         this.carList = carList;
     }
 
-    public static GameTurn createMatchByCarNameArray(String[] carNames) {
+    public static Game createMatchByCarNameArray(String[] carNames) {
         List<Car> carList = new ArrayList<>();
 
         for (String carName : carNames) {
             carList.add(new Car(carName));
         }
 
-        return new GameTurn(carList);
+        return new Game(carList);
     }
 
     private void validateCarNamesArray(List<Car> carList) {
@@ -37,8 +37,14 @@ public class GameTurn {
         }
     }
 
-    private List<Car> getCarList() {
-        return Collections.unmodifiableList(this.carList);
+    public List<Car> getCarList() {
+        List<Car> carList = new ArrayList<>();
+
+        for (Car car: this.carList) {
+            carList.add(car.clone());
+        }
+
+        return Collections.unmodifiableList(carList);
     }
 
     private int getLongestDistanceInMatch() {
