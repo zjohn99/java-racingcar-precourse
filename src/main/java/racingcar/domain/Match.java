@@ -1,6 +1,6 @@
-package racingcar.elements;
+package racingcar.domain;
 
-import static racingcar.elements.Car.createCarListByStringArray;
+import static racingcar.domain.Car.createCarListByStringArray;
 import static racingcar.tools.GameRandomTool.carMoveVerifier;
 
 import java.util.ArrayList;

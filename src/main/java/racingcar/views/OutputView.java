@@ -1,8 +1,8 @@
 package racingcar.views;
 
 import java.util.Collections;
-import racingcar.elements.Car;
-import racingcar.elements.Match;
+import racingcar.domain.Car;
+import racingcar.domain.Match;
 
 public class OutputView {
 

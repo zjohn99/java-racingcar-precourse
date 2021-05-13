@@ -1,7 +1,7 @@
 package racingcar;
 
 import java.util.Scanner;
-import racingcar.elements.Match;
+import racingcar.domain.Match;
 import racingcar.views.GameMessages;
 import racingcar.views.InputView;
 import racingcar.views.OutputView;
