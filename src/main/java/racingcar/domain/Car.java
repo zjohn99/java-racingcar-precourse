@@ -1,8 +1,5 @@
 package racingcar.domain;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Car {
 
     private static final int moveDistancePerOrder = 1;
@@ -11,19 +8,9 @@ public class Car {
     private final String name;
     private int position = 0;
 
-    private Car(String name) {
+    public Car(String name) {
         validateName(name);
         this.name = name;
-    }
-
-    public static List<Car> createCarListByStringArray(String[] carNames) {
-        List<Car> carList = new ArrayList<>();
-
-        for (String carName : carNames) {
-            carList.add(new Car(carName));
-        }
-
-        return carList;
     }
 
     public String getName() {

@@ -1,6 +1,5 @@
 package racingcar.domain;
 
-import static racingcar.domain.Car.createCarListByStringArray;
 import static racingcar.tools.GameRandomTool.carMoveVerifier;
 
 import java.util.ArrayList;
@@ -19,7 +18,13 @@ public class GameTurn {
     }
 
     public static GameTurn createMatchByCarNameArray(String[] carNames) {
-        return new GameTurn(createCarListByStringArray(carNames));
+        List<Car> carList = new ArrayList<>();
+
+        for (String carName : carNames) {
+            carList.add(new Car(carName));
+        }
+
+        return new GameTurn(carList);
     }
 
     private Integer getLongestDistanceInMatch() {
