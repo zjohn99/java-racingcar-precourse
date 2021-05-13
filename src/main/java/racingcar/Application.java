@@ -9,7 +9,7 @@ public class Application {
 
     private static void runGame(Scanner sc) {
         String[] carNameArray = InputView.inputCarList(sc);
-        Game game = Game.createMatchByCarNameArray(carNameArray);
+        Game game = Game.createGameByCarNameArray(carNameArray);
         int turnCount = InputView.inputTurn(sc);
 
         OutputView.printExecutionResultUIMessage();

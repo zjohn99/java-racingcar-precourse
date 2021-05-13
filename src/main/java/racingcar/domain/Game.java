@@ -21,7 +21,7 @@ public class Game {
         this.carList = carList;
     }
 
-    public static Game createMatchByCarNameArray(String[] carNames) {
+    public static Game createGameByCarNameArray(String[] carNames) {
         List<Car> carList = new ArrayList<>();
 
         for (String carName : carNames) {
