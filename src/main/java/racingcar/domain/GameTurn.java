@@ -1,6 +1,6 @@
 package racingcar.domain;
 
-import static racingcar.tools.GameRandomTool.carMoveVerifier;
+import racingcar.tools.GameRandomTool;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +41,7 @@ public class GameTurn {
 
     public void runOneTurn() {
         for (Car car : carList) {
-            if (carMoveVerifier()) {
+            if (GameRandomTool.carMoveVerifier()) {
                 car.moveCar();
                 this.updateLongestDistance(car);
             }
