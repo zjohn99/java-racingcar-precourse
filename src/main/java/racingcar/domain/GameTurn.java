@@ -7,6 +7,8 @@ import java.util.List;
 
 public class GameTurn {
 
+    private static int minimumRequirementNumberForCarMove = 4;
+
     private Integer longestDistanceInMatch = 0;
     private List<Car> carList;
 
@@ -31,19 +33,24 @@ public class GameTurn {
         return this.longestDistanceInMatch;
     }
 
+    private boolean isCarMoveAble(int number) {
+        return number >= minimumRequirementNumberForCarMove;
+    }
+
     public List<Car> getCarList() {
         return this.carList;
     }
 
     public void updateLongestDistance() {
         for (Car car : carList) {
-            this.longestDistanceInMatch = Math.max(car.getPosition(), this.getLongestDistanceInMatch());
+            this.longestDistanceInMatch = Math
+                .max(car.getPosition(), this.getLongestDistanceInMatch());
         }
     }
 
     public void runOneTurn() {
         for (Car car : carList) {
-            if (GameRandomTool.carMoveVerifier()) {
+            if (isCarMoveAble(GameRandomTool.makeGameRandomNumber())) {
                 car.moveCar();
             }
         }
