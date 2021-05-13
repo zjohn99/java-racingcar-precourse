@@ -24,8 +24,8 @@ public class InputView {
         return carList;
     }
 
-    public static Integer inputTurn(Scanner sc) {
-        Integer turn;
+    public static int inputTurn(Scanner sc) {
+        int turn;
 
         System.out.println("시도할 회수는 몇회인가요?");
 
