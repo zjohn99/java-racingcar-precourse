@@ -53,7 +53,7 @@ public class GameTurn {
         List<String> result = new ArrayList<>();
 
         for (Car car : this.getCarList()) {
-            if (car.getPosition() == this.getLongestDistanceInMatch()) {
+            if (car.getPosition() == getLongestDistanceInMatch()) {
                 result.add(car.getName());
             }
         }
