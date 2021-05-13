@@ -19,10 +19,16 @@ public class OutputView {
             printCarStatus(car);
         }
 
-        GameMessages.printEmptyNextLine();
+        printEmptyNextLine();
     }
 
     public static void printMatchWinner(GameTurn gameTurn) {
         System.out.println("최종 우승자: " + String.join(", ", gameTurn.makeWinnerResult()));
     }
+
+    public static void printExecutionResultUIMessage() {
+        System.out.println("실행 결과");
+    }
+
+    public static void printEmptyNextLine() { System.out.println(); }
 }

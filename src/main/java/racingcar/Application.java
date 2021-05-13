@@ -2,7 +2,6 @@ package racingcar;
 
 import java.util.Scanner;
 import racingcar.domain.GameTurn;
-import racingcar.views.GameMessages;
 import racingcar.views.InputView;
 import racingcar.views.OutputView;
 
@@ -13,8 +12,8 @@ public class Application {
         GameTurn gameTurn = GameTurn.createMatchByCarNameArray(carNameArray);
         int turnCount = InputView.inputTurn(sc);
 
-        GameMessages.printExecutionResultUIMessage();
-        GameMessages.printEmptyNextLine();
+        OutputView.printExecutionResultUIMessage();
+        OutputView.printEmptyNextLine();
 
         while (turnCount != 0) {
             turnCount--;
