@@ -1,5 +1,6 @@
 package racingcar.domain;
 
+import java.util.Collections;
 import racingcar.tools.GameRandomTool;
 
 import java.util.ArrayList;
@@ -37,7 +38,7 @@ public class GameTurn {
     }
 
     public List<Car> getCarList() {
-        return this.carList;
+        return Collections.unmodifiableList(this.carList);
     }
 
     private int getLongestDistanceInMatch() {
