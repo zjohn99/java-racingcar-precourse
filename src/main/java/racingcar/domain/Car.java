@@ -12,7 +12,7 @@ public class Car {
     private int position = 0;
 
     private Car(String name) {
-        validateNameLength(name);
+        validateName(name);
         this.name = name;
     }
 
@@ -34,7 +34,7 @@ public class Car {
         return this.position;
     }
 
-    private void validateNameLength(String name) {
+    private void validateName(String name) {
         if (name == null) {
             throw new IllegalArgumentException("[ERROR]: 이름이 null 인 경우는 허용하지 않습니다.");
         }
