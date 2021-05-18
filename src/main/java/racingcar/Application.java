@@ -56,6 +56,7 @@ public class Application {
             }
         }
         return maxVal;
+
     }
 
     public static void oneRace() {
